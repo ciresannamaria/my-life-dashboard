@@ -40,7 +40,7 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
 </aside>
 <main class="main">
   <header class="topbar">
-    <div><div class="eyebrow">My personal space</div><div class="date" id="today-long"></div></div>
+    <div><div class="eyebrow">My personal space</div><div class="date" id="today-long"></div><div class="week-number" id="week-number-top">Week 45</div></div>
     <div class="top-actions"><div class="avatar">A</div></div>
   </header>
   <section class="page-heading"><h1 id="page-title">Overview</h1></section>
@@ -78,7 +78,7 @@ function updateDate(){
   const now=new Date();const target=new Date(2026,11,12);const todayMidnight=new Date(now.getFullYear(),now.getMonth(),now.getDate());const targetMidnight=new Date(target.getFullYear(),target.getMonth(),target.getDate());const days=Math.max(0,Math.ceil((targetMidnight-todayMidnight)/86400000));
   document.getElementById('today-date').textContent=formatDate(now);
   document.getElementById('today-long').textContent=now.toLocaleDateString('en-GB',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
-  document.getElementById('week-number').textContent='Week '+isoWeek(now);
+  document.getElementById('week-number').textContent='Week '+isoWeek(now);document.getElementById('week-number-top').textContent='Week '+isoWeek(now);
   document.getElementById('holiday-days').textContent=days;
   document.getElementById('holiday-detail').textContent=formatDate(target)+' · calendar days, weekends included';
 }
