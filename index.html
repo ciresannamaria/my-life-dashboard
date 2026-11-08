@@ -18,6 +18,9 @@
 @media(max-width:380px){.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav a{font-size:7px}.nav .ico{font-size:16px}.main{padding-left:11px;padding-right:11px}.card{padding:14px}}
 @media(min-width:761px){.sidebar{position:sticky;top:0;height:100vh}}
 html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlight-color:transparent}.nav a:focus-visible{outline:2px solid var(--capp);outline-offset:2px}
+.page-heading{margin:5px 0 28px}.page-heading h1{font-family:Georgia,serif;font-size:clamp(34px,4vw,48px);font-weight:400;letter-spacing:-1px;color:var(--espresso);margin:0}.overview-content{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;max-width:980px}.date-panel,.holiday-panel{background:var(--paper);border:1px solid rgba(214,194,170,.55);border-radius:22px;padding:clamp(22px,3vw,34px);box-shadow:var(--shadow);min-height:190px}.today-date{font-family:Georgia,serif;font-size:clamp(36px,5vw,54px);letter-spacing:-1.5px;color:var(--espresso);margin:15px 0 5px;white-space:nowrap}.week-number{font-size:13px;color:var(--muted)}.holiday-panel{background:#ede4d9;display:flex;align-items:flex-start;gap:18px}.holiday-symbol{width:42px;height:42px;flex:0 0 42px;border-radius:15px;background:#dfcfbd;color:var(--mocha);display:grid;place-items:center;font-size:22px}.holiday-count{font-family:Georgia,serif;font-size:clamp(33px,4vw,44px);color:var(--espresso);margin:14px 0 0;letter-spacing:-1px}.holiday-label{font-size:15px;color:var(--mocha);margin-top:1px}.holiday-detail{font-size:11px;color:var(--muted);margin-top:15px}.topbar .date{font-size:12px;color:var(--muted);margin-top:6px}
+@media(max-width:760px){.main{padding-top:24px}.topbar{margin-bottom:28px}.page-heading{margin:0 0 22px}.page-heading h1{font-size:36px}.overview-content{grid-template-columns:1fr;gap:13px}.date-panel,.holiday-panel{min-height:0;padding:22px;border-radius:18px}.today-date{font-size:42px;margin:12px 0 4px}.holiday-count{font-size:38px}.holiday-panel{gap:14px}.holiday-symbol{width:38px;height:38px;flex-basis:38px}}
+@media(min-width:761px){.overview-content{grid-template-columns:minmax(280px,.9fr) minmax(360px,1.1fr)}}
 </style>
 </head>
 <body>
@@ -33,52 +36,53 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
     <a href="#learning"><span class="ico">▤</span>Learning</a>
     <a href="#journal"><span class="ico">✎</span>Journal</a>
   </nav></div>
-  <div class="sidebar-note"><small>A gentle reminder</small><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p></div>
+  
 </aside>
-<main class="main" id="overview">
-  <header class="topbar"><div><div class="eyebrow">Your personal dashboard</div><div class="date">Sunday, November 8 · A fresh page</div></div><div class="top-actions"><div class="search">⌕ &nbsp; Search your space</div><div class="avatar">A</div></div></header>
-  <section class="welcome"><div><div class="eyebrow">A little overview</div><h1>Good morning, Anna.</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Make space for what matters.</p></div><div class="welcome-tag">✦ &nbsp; Your space, your pace</div></section>
-  <section class="grid">
-    <article class="card metric span-3" style="--tint:#efe4d8"><div class="metric-top"><span>Wellbeing</span><span class="metric-icon">✧</span></div><div class="metric-value">—</div><div class="metric-foot">Lorem ipsum dolor sit amet</div></article>
-    <article class="card metric span-3" style="--tint:#e6eadf"><div class="metric-top"><span>Daily habits</span><span class="metric-icon">↗</span></div><div class="metric-value">— / —</div><div class="metric-foot">Lorem ipsum dolor sit amet</div></article>
-    <article class="card metric span-3" style="--tint:#f1e5e0"><div class="metric-top"><span>Nutrition</span><span class="metric-icon">◒</span></div><div class="metric-value">—</div><div class="metric-foot">Lorem ipsum dolor sit amet</div></article>
-    <article class="card metric span-3" style="--tint:#eee8d8"><div class="metric-top"><span>Finances</span><span class="metric-icon">◇</span></div><div class="metric-value">— €</div><div class="metric-foot">Lorem ipsum dolor sit amet</div></article>
-    <article class="card span-7" id="habits"><div class="section-head"><h2>Your week at a glance</h2><a class="subtle-link" href="#habits">View activity ↗</a></div><div class="week">
-      <div class="day"><div class="bar-wrap"><div class="bar" style="height:42%"></div></div><strong>Mon</strong><small>01</small></div>
-      <div class="day"><div class="bar-wrap"><div class="bar" style="height:70%"></div></div><strong>Tue</strong><small>02</small></div>
-      <div class="day"><div class="bar-wrap"><div class="bar" style="height:54%"></div></div><strong>Wed</strong><small>03</small></div>
-      <div class="day"><div class="bar-wrap"><div class="bar" style="height:82%"></div></div><strong>Thu</strong><small>04</small></div>
-      <div class="day"><div class="bar-wrap"><div class="bar" style="height:62%"></div></div><strong>Fri</strong><small>05</small></div>
-      <div class="day"><div class="bar-wrap"><div class="bar" style="height:35%"></div></div><strong>Sat</strong><small>06</small></div>
-      <div class="day"><div class="bar-wrap"><div class="bar" style="height:20%"></div></div><strong>Sun</strong><small>07</small></div>
-    </div><div class="metric-foot">Lorem ipsum dolor sit amet · Sample illustration only</div></article>
-    <article class="card span-5"><div class="section-head"><h2>Today, gently</h2><a class="subtle-link" href="#journal">See all ↗</a></div><div class="agenda">
-      <div class="agenda-row"><div class="agenda-time">08:00</div><div class="agenda-dot"></div><div class="agenda-copy"><strong>Lorem ipsum dolor</strong><small>Consectetur adipiscing elit</small></div></div>
-      <div class="agenda-row"><div class="agenda-time">12:30</div><div class="agenda-dot" style="background:#87917a"></div><div class="agenda-copy"><strong>Adipiscing elit sed</strong><small>Tempor incididunt ut labore</small></div></div>
-      <div class="agenda-row"><div class="agenda-time">18:00</div><div class="agenda-dot" style="background:#c58f7c"></div><div class="agenda-copy"><strong>Dolore magna aliqua</strong><small>Ut enim ad minim veniam</small></div></div>
-    </div></article>
-    <article class="card span-8" id="wellbeing"><div class="section-head"><h2>Your life, in chapters</h2><a class="subtle-link" href="#wellbeing">Explore modules ↗</a></div><div class="module-grid">
-      <div class="module"><div class="module-icon" style="background:#efe4d8">✧</div><h3>Health & wellbeing</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-      <div class="module" id="nutrition"><div class="module-icon" style="background:#f1e5e0">◒</div><h3>Nutrition & meals</h3><p>Sed do eiusmod tempor incididunt ut labore et dolore.</p></div>
-      <div class="module" id="finances"><div class="module-icon" style="background:#eee8d8">◇</div><h3>Money & finances</h3><p>Ut enim ad minim veniam, quis nostrud exercitation.</p></div>
-      <div class="module"><div class="module-icon" style="background:#e6eadf">♡</div><h3>Cycle & patterns</h3><p>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-      <div class="module"><div class="module-icon" style="background:#e8e4ed">↗</div><h3>Habits & routines</h3><p>Duis aute irure dolor in reprehenderit in voluptate.</p></div>
-      <div class="module" id="learning"><div class="module-icon" style="background:#e8e9df">▤</div><h3>Learning & growth</h3><p>Velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
-      <div class="module"><div class="module-icon" style="background:#f2e8dc">⌁</div><h3>Travel & memories</h3><p>Excepteur sint occaecat cupidatat non proident.</p></div>
-      <div class="module" id="journal"><div class="module-icon" style="background:#f0e4e1">✎</div><h3>Personal journal</h3><p>Sunt in culpa qui officia deserunt mollit anim.</p></div>
-    </div></article>
-    <article class="card quote span-4"><div class="quote-mark">“</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae.</p><small>A note to yourself · sample text</small></article>
-    <article class="card span-12"><div class="section-head"><h2>Small steps, meaningful things</h2><a class="subtle-link" href="#habits">All intentions ↗</a></div>
-      <div class="goal"><div class="goal-icon">✧</div><div class="goal-text"><strong>Lorem ipsum dolor sit amet</strong><small>Consectetur adipiscing elit</small><div class="progress"><i style="width:62%"></i></div></div><div class="goal-pct">62%</div></div>
-      <div class="goal"><div class="goal-icon">♡</div><div class="goal-text"><strong>Ut enim ad minim veniam</strong><small>Quis nostrud exercitation ullamco</small><div class="progress"><i style="width:38%;background:#c49a5b"></i></div></div><div class="goal-pct">38%</div></div>
-      <div class="goal"><div class="goal-icon">⌁</div><div class="goal-text"><strong>Duis aute irure dolor</strong><small>In reprehenderit in voluptate velit</small><div class="progress"><i style="width:76%;background:#c58f7c"></i></div></div><div class="goal-pct">76%</div></div>
+<main class="main">
+  <header class="topbar">
+    <div><div class="eyebrow">My personal space</div><div class="date" id="today-long"></div></div>
+    <div class="top-actions"><div class="avatar">A</div></div>
+  </header>
+  <section class="page-heading"><h1 id="page-title">Overview</h1></section>
+  <section id="overview-content" class="overview-content" aria-label="Today">
+    <article class="date-panel">
+      <div class="eyebrow">Today is</div>
+      <div class="today-date" id="today-date">08.11.2026</div>
+      <div class="week-number" id="week-number">Week 45</div>
+    </article>
+    <article class="holiday-panel">
+      <div class="holiday-symbol">✧</div>
+      <div class="holiday-copy">
+        <div class="eyebrow">Something to look forward to</div>
+        <div class="holiday-count"><span id="holiday-days">34</span> days left</div>
+        <div class="holiday-label">until the next holidays</div>
+        <div class="holiday-detail" id="holiday-detail">12.12.2026 · calendar days, weekends included</div>
+      </div>
     </article>
   </section>
-  <div class="footer">MY LIFE · A QUIET SPACE TO NOTICE, REFLECT & GROW</div>
 </main>
 </div>
 <script>
-document.querySelectorAll('.nav a').forEach(link=>link.addEventListener('click',()=>{document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));link.classList.add('active')}));
+const pageNames={overview:"Overview",wellbeing:"Wellbeing",nutrition:"Nutrition",finances:"Finances",habits:"Habits & goals",learning:"Learning",journal:"Journal"};
+const navLinks=[...document.querySelectorAll('.nav a')];
+function showPage(key){
+  const safeKey=pageNames[key]?key:"overview";
+  document.getElementById('page-title').textContent=pageNames[safeKey];
+  document.getElementById('overview-content').hidden=safeKey!=="overview";
+  navLinks.forEach(link=>{const active=link.getAttribute('href')==="#"+safeKey;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
+}
+navLinks.forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const key=link.getAttribute('href').slice(1);history.replaceState(null,"","#"+key);showPage(key)}));
+function isoWeek(date){const d=new Date(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate()));const day=d.getUTCDay()||7;d.setUTCDate(d.getUTCDate()+4-day);const yearStart=new Date(Date.UTC(d.getUTCFullYear(),0,1));return Math.ceil((((d-yearStart)/86400000)+1)/7)}
+function formatDate(date){return new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'2-digit',year:'numeric'}).format(date)}
+function updateDate(){
+  const now=new Date();const target=new Date(2026,11,12);const todayMidnight=new Date(now.getFullYear(),now.getMonth(),now.getDate());const targetMidnight=new Date(target.getFullYear(),target.getMonth(),target.getDate());const days=Math.max(0,Math.ceil((targetMidnight-todayMidnight)/86400000));
+  document.getElementById('today-date').textContent=formatDate(now);
+  document.getElementById('today-long').textContent=now.toLocaleDateString('en-GB',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+  document.getElementById('week-number').textContent='Week '+isoWeek(now);
+  document.getElementById('holiday-days').textContent=days;
+  document.getElementById('holiday-detail').textContent=formatDate(target)+' · calendar days, weekends included';
+}
+updateDate();showPage(location.hash.slice(1)||"overview");
 if ('serviceWorker' in navigator && location.protocol !== 'file:') { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }
 </script>
 </body>
