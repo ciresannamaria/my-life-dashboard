@@ -106,7 +106,7 @@ function formatDate(date){return new Intl.DateTimeFormat('en-GB',{day:'2-digit',
 function updateDate(){
   const now=new Date();const target=new Date(2026,11,12);const todayMidnight=new Date(now.getFullYear(),now.getMonth(),now.getDate());const targetMidnight=new Date(target.getFullYear(),target.getMonth(),target.getDate());const days=Math.max(0,Math.ceil((targetMidnight-todayMidnight)/86400000));
   document.getElementById('today-long').textContent=formatDate(now);
-  document.getElementById('week-number-top').textContent='Week '+isoWeek(now);
+  document.getElementById('week-number-top').textContent='Week '+isoWeek(now)+'/'+isoWeek(new Date(now.getFullYear(),11,28));
   document.getElementById('holiday-days').textContent=days;
   document.getElementById('holiday-weeks').textContent=Math.ceil(days/7);
 }
