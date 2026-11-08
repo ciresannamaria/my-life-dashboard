@@ -25,6 +25,9 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
 
 .crafting-content{display:grid;gap:18px;max-width:1050px}.crafting-intro h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(27px,3.5vw,36px);color:var(--espresso);margin:7px 0 6px}.crafting-intro p{font-size:12px;color:var(--muted);margin:0;line-height:1.6}.crafting-empty{display:flex;flex-direction:column;align-items:flex-start;padding:25px}.crafting-empty-icon{font-size:30px;width:54px;height:54px;border-radius:17px;background:#eee6dc;display:grid;place-items:center}.crafting-empty h3{font-family:Georgia,serif;font-size:23px;font-weight:400;color:var(--espresso);margin:15px 0 6px}.crafting-empty p{font-size:12px;line-height:1.7;color:var(--muted);max-width:620px;margin:0}.crafting-card-preview{background:var(--paper);border:1px solid rgba(214,194,170,.5);border-radius:19px;padding:21px;box-shadow:var(--shadow)}.pattern-flip-card{display:block;width:100%;max-width:430px;height:430px;margin:16px auto 2px;border:0;background:transparent;padding:0;perspective:1000px;text-align:left;cursor:pointer;color:var(--ink)}.pattern-card-inner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1)}.pattern-flip-card.is-flipped .pattern-card-inner{transform:rotateY(180deg)}.pattern-card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;border:1px solid var(--line);border-radius:19px;background:#f7f0e7;backface-visibility:hidden;-webkit-backface-visibility:hidden;text-align:center}.pattern-card-back{overflow-y:auto;justify-content:flex-start;text-align:left;align-items:flex-start}.pattern-card-back .pattern-card-kicker{align-self:center;margin-bottom:8px}.pattern-card-back strong{align-self:center}.pattern-card-back .pattern-card-turn{align-self:center;margin-top:auto;padding-top:10px}.pattern-card-placeholder{font-size:11px;line-height:1.55;color:var(--muted);text-align:left;margin-top:12px;width:100%}.pattern-card-placeholder b{color:var(--espresso)}.pattern-card-front{background:linear-gradient(145deg,#f5efe6,#e9dfd3)}.pattern-card-back{transform:rotateY(180deg);background:#f3eee6}.pattern-card-kicker{font-size:9px;letter-spacing:2px;color:var(--latte);font-weight:700}.pattern-card-art{font-size:55px;color:var(--sage);margin:17px 0 10px}.pattern-card-face strong{font-family:Georgia,serif;font-size:23px;font-weight:400;color:var(--espresso)}.pattern-card-meta{font-size:11px;color:var(--muted);margin-top:8px}.pattern-card-turn{font-size:10px;color:var(--mocha);margin-top:20px}.pattern-card-placeholder{font-size:12px;line-height:2;color:var(--muted);text-align:left;margin-top:13px}.pattern-flip-card:focus-visible{outline:3px solid var(--latte);outline-offset:5px;border-radius:20px}
 @media(max-width:760px){.nav{grid-template-columns:repeat(9,minmax(0,1fr))}.nav a{font-size:7px}.nav .ico{font-size:16px}.crafting-empty{padding:19px}.crafting-card-preview{padding:15px}.pattern-flip-card{height:430px}.pattern-card-face{padding:18px}}
+
+.crafting-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.crafting-add-button,.crafting-save-button{border:0;border-radius:12px;background:var(--espresso);color:#fff;padding:12px 17px;font-size:12px;font-weight:600;cursor:pointer}.crafting-storage-note{font-size:10px;color:var(--muted)}.pattern-editor{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:13px;max-width:680px}.pattern-editor[hidden]{display:none}.pattern-editor h2{font-family:Georgia,serif;font-weight:400;color:var(--espresso);margin:0 0 3px}.pattern-editor label{display:grid;gap:6px;font-size:11px;color:var(--mocha);font-weight:600}.pattern-editor input:not([type=file]),.pattern-editor textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;background:#fffdfa;color:var(--ink);font:12px inherit}.pattern-editor textarea{resize:vertical;line-height:1.5}.pattern-editor input:focus,.pattern-editor textarea:focus{outline:2px solid var(--capp);border-color:var(--latte)}.photo-picker input{font-size:11px}.photo-picker span{font-size:10px;color:var(--muted);font-weight:400}.pattern-editor-actions{display:flex;gap:9px}.crafting-cancel-button,.pattern-edit-button,.pattern-delete-button{border:1px solid var(--line);border-radius:10px;background:#fffdfa;color:var(--mocha);padding:10px 14px;font-size:11px;cursor:pointer}.pattern-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}.crafting-card-preview{min-width:0}.pattern-card-photo{width:100%;height:100%;object-fit:cover;border-radius:12px}.pattern-card-art{display:grid;place-items:center;width:100%;height:190px;font-size:55px;color:var(--sage);margin:0 0 10px}.pattern-card-front{gap:8px}.pattern-card-front strong{margin-top:4px}.pattern-card-back .pattern-card-placeholder{white-space:pre-wrap;line-height:1.65}.pattern-actions{display:flex;justify-content:center;gap:8px;margin-top:12px}.pattern-flip-card{margin-top:0}.pattern-empty{font-size:12px;color:var(--muted);padding:20px;background:var(--paper);border:1px dashed var(--capp);border-radius:16px}
+@media(max-width:760px){.crafting-toolbar{align-items:flex-start}.pattern-editor{padding:15px}.pattern-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -66,25 +69,17 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
     </article>
   </section>
   <section id="crafting-content" class="crafting-content" hidden>
-    <div class="crafting-card-preview">
-      <button class="pattern-flip-card" id="pattern-preview" type="button" aria-label="Crochet hat pattern. Tap to see the instructions." aria-pressed="false">
-        <span class="pattern-card-inner">
-          <span class="pattern-card-face pattern-card-front">
-            <span class="pattern-card-kicker">CROCHET PROJECT</span>
-            <span class="pattern-card-art">🧶</span>
-            <strong>Crochet hat</strong>
-            <span class="pattern-card-meta">Craft type · Crochet</span>
-            <span class="pattern-card-turn">Tap to see the steps ↻</span>
-          </span>
-          <span class="pattern-card-face pattern-card-back">
-            <span class="pattern-card-kicker">CROCHET HAT · PATTERN IN PROGRESS</span>
-            <strong>Yarn & materials</strong>
-            <span class="pattern-card-placeholder">Yarn: Action Velvet<br>Brand: Alice & Mae<br>Amount: approximately 150–200 g<br><br><b>Starting circle</b><br>Make 4 chains and connect them into a circle.<br><br><b>Rounds</b><br>1st: 8 sc<br>2nd: 1 sc, 1 increase<br>3rd: 2 sc, 1 increase<br>…<br>10th: 9 sc, 1 increase<br><br>Diameter after 10th round: approximately 16.2 cm.<br><br><b>11th round onward:</b> To be added — pattern still in progress.</span>
-            <span class="pattern-card-turn">Tap to return ↻</span>
-          </span>
-        </span>
-      </button>
-    </div>
+    <div class="crafting-toolbar"><button class="crafting-add-button" id="add-pattern" type="button">＋ Add a pattern</button><span class="crafting-storage-note">Photos are automatically resized and compressed.</span></div>
+    <form id="pattern-editor" class="pattern-editor" hidden>
+      <h2 id="pattern-editor-title">Add a pattern</h2>
+      <label>Pattern name<input id="pattern-name" required maxlength="70" placeholder="e.g. Crochet hat"></label>
+      <label>Craft type<input id="pattern-type" maxlength="40" placeholder="e.g. Crochet"></label>
+      <label>Materials<textarea id="pattern-materials" rows="3" placeholder="Yarn, tools, quantities…"></textarea></label>
+      <label>Instructions<textarea id="pattern-instructions" rows="7" placeholder="Write your steps here…"></textarea></label>
+      <label class="photo-picker">Front photo <input id="pattern-photo" type="file" accept="image/*"><span id="photo-status">Choose a photo (optional). It will be resized to a maximum of 600 × 600 px.</span></label>
+      <div class="pattern-editor-actions"><button type="submit" class="crafting-save-button">Save pattern</button><button type="button" id="cancel-pattern" class="crafting-cancel-button">Cancel</button></div>
+    </form>
+    <div id="pattern-list" class="pattern-list"></div>
   </section>
 </main>
 </div>
@@ -130,7 +125,30 @@ function drawWeightChart(){
 }
 
 updateDate();showPage(location.hash.slice(1)||"overview");drawWeightChart();
-document.getElementById("pattern-preview").addEventListener("click",function(){const flipped=this.classList.toggle("is-flipped");this.setAttribute("aria-pressed",String(flipped));this.setAttribute("aria-label",flipped?"Pattern card back showing steps. Tap to return to the front.":"Preview pattern card. Tap to see the back with instructions.");});
+
+const patternStoreKey="my-life-patterns-v1";
+const starterPattern={id:"crochet-hat",name:"Crochet hat",type:"Crochet",materials:"Yarn: Action Velvet\nBrand: Alice & Mae\nAmount: approximately 150–200 g",instructions:"Starting circle\nMake 4 chains and connect them into a circle.\n\nRounds\n1st: 8 sc\n2nd: 1 sc, 1 increase\n3rd: 2 sc, 1 increase\n…\n10th: 9 sc, 1 increase\n\nDiameter after 10th round: approximately 16.2 cm.\n\n11th round onward: To be added — pattern still in progress.",photo:""};
+let patterns=[];
+try{const saved=JSON.parse(localStorage.getItem(patternStoreKey)||"null");patterns=Array.isArray(saved)?saved:[starterPattern]}catch(e){patterns=[starterPattern]}
+if(!patterns.some(p=>p.id==="crochet-hat"))patterns.unshift(starterPattern);
+function persistPatterns(){try{localStorage.setItem(patternStoreKey,JSON.stringify(patterns));return true}catch(e){alert("There isn't enough browser storage for this pattern. Try using a smaller photo.");return false}}
+function escapeHTML(value){return String(value||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderPatterns(){
+ const list=document.getElementById("pattern-list");
+ if(!patterns.length){list.innerHTML='<div class="pattern-empty">No patterns yet. Add your first pattern above.</div>';return}
+ list.innerHTML=patterns.map(p=>'<article class="crafting-card-preview"><button class="pattern-flip-card" type="button" data-flip="'+escapeHTML(p.id)+'" aria-pressed="false"><span class="pattern-card-inner"><span class="pattern-card-face pattern-card-front"><span class="pattern-card-kicker">'+escapeHTML((p.type||"CRAFT").toUpperCase())+' PROJECT</span>'+(p.photo?'<img class="pattern-card-art pattern-card-photo" src="'+p.photo+'" alt="">':'<span class="pattern-card-art">🧶</span>')+'<strong>'+escapeHTML(p.name)+'</strong><span class="pattern-card-meta">Craft type · '+escapeHTML(p.type||"Not specified")+'</span><span class="pattern-card-turn">Tap to see the details ↻</span></span><span class="pattern-card-face pattern-card-back"><span class="pattern-card-kicker">'+escapeHTML(p.name.toUpperCase())+'</span><strong>Materials</strong><span class="pattern-card-placeholder">'+escapeHTML(p.materials||"No materials added yet.")+'</span><strong style="margin-top:14px">Instructions</strong><span class="pattern-card-placeholder">'+escapeHTML(p.instructions||"No instructions added yet.")+'</span><span class="pattern-card-turn">Tap to return ↻</span></span></span></button><div class="pattern-actions"><button type="button" class="pattern-edit-button" data-edit="'+escapeHTML(p.id)+'">Edit</button><button type="button" class="pattern-delete-button" data-delete="'+escapeHTML(p.id)+'">Delete</button></div></article>').join("");
+}
+const editor=document.getElementById("pattern-editor"),photoInput=document.getElementById("pattern-photo");
+let editingId=null, pendingPhoto=null;
+function resetEditor(){editor.reset();editingId=null;pendingPhoto=null;document.getElementById("pattern-editor-title").textContent="Add a pattern";document.getElementById("photo-status").textContent="Choose a photo (optional). It will be resized to a maximum of 600 × 600 px.";editor.hidden=true}
+function openEditor(pattern){editingId=pattern?pattern.id:null;pendingPhoto=pattern?.photo||null;document.getElementById("pattern-editor-title").textContent=pattern?"Edit pattern":"Add a pattern";document.getElementById("pattern-name").value=pattern?.name||"";document.getElementById("pattern-type").value=pattern?.type||"";document.getElementById("pattern-materials").value=pattern?.materials||"";document.getElementById("pattern-instructions").value=pattern?.instructions||"";photoInput.value="";document.getElementById("photo-status").textContent=pattern?.photo?"Photo saved. Choose another to replace it.":"Choose a photo (optional). It will be resized to a maximum of 600 × 600 px.";editor.hidden=false;editor.scrollIntoView({behavior:"smooth",block:"start"})}
+function compressPhoto(file){return new Promise((resolve,reject)=>{if(!file.type.startsWith("image/"))return reject(new Error("Please choose an image."));const reader=new FileReader();reader.onerror=()=>reject(new Error("Could not read that photo."));reader.onload=()=>{const img=new Image();img.onerror=()=>reject(new Error("Could not open that photo."));img.onload=()=>{const scale=Math.min(1,600/Math.max(img.width,img.height));const canvas=document.createElement("canvas");canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));canvas.getContext("2d").drawImage(img,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL("image/webp",.65))};img.src=reader.result};reader.readAsDataURL(file)})}
+document.getElementById("add-pattern").addEventListener("click",()=>openEditor(null));
+document.getElementById("cancel-pattern").addEventListener("click",resetEditor);
+photoInput.addEventListener("change",async()=>{const file=photoInput.files?.[0];if(!file)return;try{pendingPhoto=await compressPhoto(file);document.getElementById("photo-status").textContent="Photo ready — resized and compressed."}catch(e){alert(e.message);photoInput.value=""}});
+editor.addEventListener("submit",event=>{event.preventDefault();const record={id:editingId||("pattern-"+Date.now()),name:document.getElementById("pattern-name").value.trim(),type:document.getElementById("pattern-type").value.trim(),materials:document.getElementById("pattern-materials").value.trim(),instructions:document.getElementById("pattern-instructions").value.trim(),photo:pendingPhoto||""};if(!record.name)return;if(editingId){patterns=patterns.map(p=>p.id===editingId?record:p)}else patterns.push(record);if(persistPatterns()){renderPatterns();resetEditor()}});
+document.getElementById("pattern-list").addEventListener("click",event=>{const flip=event.target.closest("[data-flip]");if(flip){const on=flip.classList.toggle("is-flipped");flip.setAttribute("aria-pressed",String(on));return}const edit=event.target.closest("[data-edit]");if(edit){const p=patterns.find(x=>x.id===edit.dataset.edit);if(p)openEditor(p);return}const del=event.target.closest("[data-delete]");if(del){const p=patterns.find(x=>x.id===del.dataset.delete);if(p&&confirm('Delete "'+p.name+'"?')){patterns=patterns.filter(x=>x.id!==p.id);if(persistPatterns())renderPatterns()}}});
+renderPatterns();
 if ('serviceWorker' in navigator && location.protocol !== 'file:') { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }
 </script>
 </body>
