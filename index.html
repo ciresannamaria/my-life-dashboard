@@ -30,6 +30,9 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
 @media(max-width:760px){.crafting-toolbar{align-items:flex-start}.pattern-editor{padding:15px}.pattern-list{grid-template-columns:1fr}}
 
 .smoking-achievement-card{display:flex;align-items:flex-start;gap:20px;background:linear-gradient(135deg,#f3eee6,#fffdf9);border:1px solid rgba(135,145,122,.35);border-radius:20px;padding:clamp(18px,3vw,26px);box-shadow:var(--shadow)}.smoking-achievement-icon{width:66px;height:66px;flex:0 0 66px;border-radius:20px;background:#e7ece3;display:grid;place-items:center;font-size:34px}.smoking-achievement-copy{min-width:0;flex:1}.smoking-achievement-copy h3{font-family:Georgia,serif;font-size:26px;font-weight:400;color:var(--espresso);margin:5px 0}.smoking-achievement-copy p{font-size:11px;color:var(--muted);margin:0}.smoking-counter{display:flex;gap:clamp(12px,3vw,28px);flex-wrap:wrap;margin-top:20px}.smoking-counter div{display:flex;flex-direction:column;gap:3px;min-width:44px}.smoking-counter strong{font-family:Georgia,serif;font-size:clamp(25px,4vw,34px);font-weight:400;line-height:1;color:var(--sage);font-variant-numeric:tabular-nums}.smoking-counter span{font-size:10px;color:var(--muted)}@media(max-width:480px){.smoking-achievement-card{gap:13px;padding:16px}.smoking-achievement-icon{width:50px;height:50px;flex-basis:50px;border-radius:15px;font-size:27px}.smoking-achievement-copy h3{font-size:23px}.smoking-counter{gap:13px}}
+
+.dates-content{display:grid;gap:18px;max-width:1050px}.dates-intro h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(27px,3.5vw,36px);color:var(--espresso);margin:7px 0 6px}.dates-intro p{font-size:12px;color:var(--muted);margin:0;line-height:1.65}.academic-year-card{background:linear-gradient(135deg,#eee6dc,#fffdf9);border:1px solid rgba(214,194,170,.6);border-radius:20px;padding:22px;box-shadow:var(--shadow)}.academic-year-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--latte);font-weight:700}.academic-year-name{font-family:Georgia,serif;font-size:32px;color:var(--espresso);margin:7px 0 4px}.academic-year-note{font-size:11px;color:var(--muted)}.date-stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.date-stat-card{background:var(--paper);border:1px solid rgba(214,194,170,.5);border-radius:17px;padding:18px;box-shadow:var(--shadow);min-height:125px}.date-stat-label{font-size:11px;color:var(--muted);line-height:1.4}.date-stat-value{font-family:Georgia,serif;font-size:34px;color:var(--espresso);margin:9px 0 3px}.date-stat-foot{font-size:10px;color:var(--latte)}.dates-upcoming-card{background:var(--paper);border:1px solid rgba(214,194,170,.5);border-radius:18px;padding:21px;box-shadow:var(--shadow)}.dates-upcoming-card h3{font-family:Georgia,serif;font-weight:400;font-size:22px;color:var(--espresso);margin:0 0 12px}.dates-empty{border:1px dashed var(--capp);border-radius:13px;padding:19px;color:var(--muted);font-size:12px;line-height:1.6;background:#fffdfa}
+@media(max-width:760px){.nav{grid-template-columns:repeat(10,minmax(0,1fr))}.nav a{font-size:6.5px}.nav .ico{font-size:15px}.date-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.date-stat-card{padding:15px;min-height:115px}.date-stat-value{font-size:30px}.academic-year-card,.dates-upcoming-card{padding:17px}}
 </style>
 </head>
 <body>
@@ -40,6 +43,7 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
     <a class="active" href="#overview"><span class="ico">⌂</span>Overview</a>
     <a href="#achievements"><span class="ico">🏆</span>My achievements</a>
     <a href="#crafting"><span class="ico">🧶</span>Crafting</a>
+    <a href="#dates"><span class="ico">📅</span>Dates</a>
     <a href="#wellbeing"><span class="ico">✧</span>Wellbeing</a>
     <a href="#nutrition"><span class="ico">◒</span>Nutrition</a>
     <a href="#finances"><span class="ico">◇</span>Finances</a>
@@ -111,10 +115,34 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
     </form>
     <div id="pattern-list" class="pattern-list"></div>
   </section>
+  <section id="dates-content" class="dates-content" hidden>
+    <div class="dates-intro">
+      <div class="eyebrow">Your time off, at a glance</div>
+      <h2>Academic year dates</h2>
+      <p>A simple overview of weekends, school holidays and the days still ahead. The numbers will be filled in when you add your academic-year dates.</p>
+    </div>
+    <article class="academic-year-card">
+      <div class="academic-year-label">Your academic year</div>
+      <div class="academic-year-name">2026 / 2027</div>
+      <div class="academic-year-note">Dates not added yet · Ready for your school calendar</div>
+    </article>
+    <div class="date-stats-grid">
+      <article class="date-stat-card"><div class="date-stat-label">Weekends in this academic year</div><div class="date-stat-value">—</div><div class="date-stat-foot">Total Saturdays and Sundays</div></article>
+      <article class="date-stat-card"><div class="date-stat-label">Weekends already passed</div><div class="date-stat-value">—</div><div class="date-stat-foot">Since the academic year began</div></article>
+      <article class="date-stat-card"><div class="date-stat-label">School holiday days</div><div class="date-stat-value">—</div><div class="date-stat-foot">Total days off</div></article>
+      <article class="date-stat-card"><div class="date-stat-label">School holiday weeks</div><div class="date-stat-value">—</div><div class="date-stat-foot">Total weeks off</div></article>
+      <article class="date-stat-card"><div class="date-stat-label">Holiday days already passed</div><div class="date-stat-value">—</div><div class="date-stat-foot">Days enjoyed so far</div></article>
+      <article class="date-stat-card"><div class="date-stat-label">Days until the next holiday</div><div class="date-stat-value">—</div><div class="date-stat-foot">Countdown to your next break</div></article>
+    </div>
+    <article class="dates-upcoming-card">
+      <h3>Upcoming holidays</h3>
+      <div class="dates-empty">Your holiday dates will appear here once you share the academic calendar.</div>
+    </article>
+  </section>
 </main>
 </div>
 <script>
-const pageNames={overview:"Overview",achievements:"My achievements",wellbeing:"Wellbeing",nutrition:"Nutrition",finances:"Finances",habits:"Habits & goals",learning:"Learning",journal:"Journal",crafting:"Crafting"};
+const pageNames={overview:"Overview",achievements:"My achievements",wellbeing:"Wellbeing",nutrition:"Nutrition",finances:"Finances",habits:"Habits & goals",learning:"Learning",journal:"Journal",crafting:"Crafting",dates:"Dates"};
 const navLinks=[...document.querySelectorAll('.nav a')];
 function showPage(key){
   const safeKey=pageNames[key]?key:"overview";
@@ -123,6 +151,7 @@ function showPage(key){
   heading.textContent=pageNames[safeKey];
   document.getElementById('achievements-content').hidden=safeKey!=="achievements";
   document.getElementById('crafting-content').hidden=safeKey!=="crafting";
+  document.getElementById('dates-content').hidden=safeKey!=="dates";
   navLinks.forEach(link=>{const active=link.getAttribute('href')==="#"+safeKey;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
 }
 navLinks.forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const key=link.getAttribute('href').slice(1);history.replaceState(null,"","#"+key);showPage(key)}));
