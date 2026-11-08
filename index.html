@@ -18,7 +18,7 @@
 @media(max-width:380px){.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav a{font-size:7px}.nav .ico{font-size:16px}.main{padding-left:11px;padding-right:11px}.card{padding:14px}}
 @media(min-width:761px){.sidebar{position:sticky;top:0;height:100vh}}
 html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlight-color:transparent}.nav a:focus-visible{outline:2px solid var(--capp);outline-offset:2px}
-.date-heading{display:flex;flex-direction:column;gap:5px}.topbar{margin-bottom:26px}.topbar .date{font-size:17px;color:var(--espresso);font-weight:600;letter-spacing:.2px;margin:0}.week-number{font-size:11px;color:var(--muted)}.overview-content{display:block;max-width:620px}.holiday-panel{background:#ede4d9;border:1px solid rgba(214,194,170,.55);border-radius:18px;padding:20px 23px;box-shadow:var(--shadow);display:flex;align-items:center;gap:15px;min-height:0}.holiday-symbol{width:36px;height:36px;flex:0 0 36px;border-radius:12px;background:#dfcfbd;color:var(--mocha);display:grid;place-items:center;font-size:18px}.holiday-count{font-family:Georgia,serif;font-size:clamp(27px,3vw,34px);color:var(--espresso);margin:7px 0 0;letter-spacing:-.6px}.holiday-detail{font-size:11px;color:var(--muted);margin-top:7px}
+.date-heading{display:flex;flex-direction:column;align-items:flex-start;gap:4px}.topbar{margin-bottom:24px}.topbar .date{font-size:17px;color:var(--espresso);font-weight:600;letter-spacing:.2px;margin:0}.week-number{font-size:11px;color:var(--muted)}.holiday-inline{font-size:12px;color:var(--mocha);font-weight:600;margin-top:5px}.holiday-inline span{font-weight:700;color:var(--espresso)}.holiday-inline small{display:block;font-size:10px;color:var(--muted);font-weight:400;margin-top:2px}.page-title{font-family:Georgia,serif;font-size:27px;font-weight:400;color:var(--espresso);margin:0 0 20px}.page-title[hidden]{display:none}
 @media(max-width:760px){.main{padding-top:24px}.topbar{margin-bottom:28px}.page-heading{margin:0 0 22px}.page-heading h1{font-size:36px}.overview-content{grid-template-columns:1fr;gap:13px}.date-panel,.holiday-panel{min-height:0;padding:22px;border-radius:18px}.today-date{font-size:42px;margin:12px 0 4px}.holiday-count{font-size:38px}.holiday-panel{gap:14px}.holiday-symbol{width:38px;height:38px;flex-basis:38px}}
 @media(min-width:761px){.overview-content{grid-template-columns:minmax(280px,.9fr) minmax(360px,1.1fr)}}
 </style>
@@ -43,19 +43,11 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
     <div class="date-heading">
       <div class="date" id="today-long">08.11.2026</div>
       <div class="week-number" id="week-number-top">Week 45</div>
+      <div class="holiday-inline"><span id="holiday-days">34</span> days left until next holidays<small id="holiday-detail">12.12.2026 · Weekends included</small></div>
     </div>
     <div class="top-actions"><div class="avatar">A</div></div>
   </header>
-  <section id="overview-content" class="overview-content" aria-label="Next holidays">
-    <article class="holiday-panel">
-      <div class="holiday-symbol">✧</div>
-      <div class="holiday-copy">
-        <div class="eyebrow">Next holidays</div>
-        <div class="holiday-count"><span id="holiday-days">34</span> days left</div>
-        <div class="holiday-detail" id="holiday-detail">12.12.2026 · Calendar days, weekends included</div>
-      </div>
-    </article>
-  </section>
+  <h1 class="page-title" id="page-title" hidden></h1>
 </main>
 </div>
 <script>
@@ -63,8 +55,9 @@ const pageNames={overview:"Overview",wellbeing:"Wellbeing",nutrition:"Nutrition"
 const navLinks=[...document.querySelectorAll('.nav a')];
 function showPage(key){
   const safeKey=pageNames[key]?key:"overview";
-  document.getElementById('page-title').textContent=pageNames[safeKey];
-  document.getElementById('overview-content').hidden=safeKey!=="overview";
+  const heading=document.getElementById('page-title');
+  heading.hidden=safeKey==="overview";
+  if(safeKey!=="overview") heading.textContent=pageNames[safeKey];
   navLinks.forEach(link=>{const active=link.getAttribute('href')==="#"+safeKey;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
 }
 navLinks.forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const key=link.getAttribute('href').slice(1);history.replaceState(null,"","#"+key);showPage(key)}));
@@ -72,11 +65,10 @@ function isoWeek(date){const d=new Date(Date.UTC(date.getFullYear(),date.getMont
 function formatDate(date){return new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'2-digit',year:'numeric'}).format(date)}
 function updateDate(){
   const now=new Date();const target=new Date(2026,11,12);const todayMidnight=new Date(now.getFullYear(),now.getMonth(),now.getDate());const targetMidnight=new Date(target.getFullYear(),target.getMonth(),target.getDate());const days=Math.max(0,Math.ceil((targetMidnight-todayMidnight)/86400000));
-  document.getElementById('today-date').textContent=formatDate(now);
   document.getElementById('today-long').textContent=formatDate(now);
   document.getElementById('week-number-top').textContent='Week '+isoWeek(now);
   document.getElementById('holiday-days').textContent=days;
-  document.getElementById('holiday-detail').textContent=formatDate(target)+' · calendar days, weekends included';
+  document.getElementById('holiday-detail').textContent=formatDate(target)+' · weekends included';
 }
 updateDate();showPage(location.hash.slice(1)||"overview");
 if ('serviceWorker' in navigator && location.protocol !== 'file:') { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }
