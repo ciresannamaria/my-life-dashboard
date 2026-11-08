@@ -22,6 +22,10 @@ Open `index.html` in a browser.
 
 The repository is currently public, so the prototype website and its source code are public too. Do not add private personal information or secrets to this repository.
 
+## Mobile app-style experience
+
+The dashboard includes a mobile bottom navigation, an installable web app manifest, an app icon, and a lightweight service worker for caching the app shell. After GitHub Pages has published the latest commit, open the site on your phone and use your browser menu to choose **Add to Home screen** or **Install app** (the wording depends on the browser). The prototype remains public and has no login protection yet.
+
 ## Planned next steps
 
 - Review the visual structure and module ideas.
