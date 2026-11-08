@@ -22,6 +22,9 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
 .achievements-content{display:grid;gap:17px;max-width:1050px}[hidden]{display:none!important}.achievement-main-card{background:var(--paper);border:1px solid rgba(214,194,170,.6);border-radius:20px;padding:clamp(18px,3vw,28px);box-shadow:var(--shadow)}.achievement-overview{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:20px;border-bottom:1px solid var(--line)}.achievement-big-number{font-family:Georgia,serif;font-size:clamp(42px,6vw,58px);line-height:1.1;color:var(--espresso);margin:5px 0}.achievement-big-number small,.goal-current-number small{font-size:18px;color:var(--latte)}.achievement-muted{font-size:11px;color:var(--muted)}.goal-current{text-align:right}.goal-current-number{font-family:Georgia,serif;font-size:35px;color:var(--espresso);margin-top:5px}.goal-progress-block{padding:20px 0 24px}.goal-progress-label,.goal-progress-foot{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted)}.goal-progress-label strong{color:var(--mocha)}.goal-progress-track{height:9px;background:#eee6dc;border-radius:20px;overflow:hidden;margin:10px 0 8px}.goal-progress-track span{display:block;width:71.875%;height:100%;border-radius:20px;background:var(--sage)}.mini-goal-track{position:relative;height:12px;overflow:hidden;background:repeating-linear-gradient(90deg,#eee6dc 0%,#eee6dc calc(15.625% - 2px),#fffdf9 calc(15.625% - 2px),#fffdf9 15.625%);border-radius:20px}.mini-goal-track .mini-goal-fill{position:absolute;inset:0 auto 0 0;width:71.875%;height:100%;background:repeating-linear-gradient(90deg,#87917a 0%,#87917a calc(21.739% - 2px),transparent calc(21.739% - 2px),transparent 21.739%);border-radius:20px 0 0 20px}.mini-goal-labels{display:flex;justify-content:space-between;gap:8px;margin-top:7px;font-size:9px;color:var(--muted)}.goal-progress-foot{font-size:10px}.achievement-card-footer{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:14px;margin-top:10px;font-size:11px;color:var(--mocha);font-weight:600}.achievement-intro{margin:0 0 2px}.achievement-intro h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(27px,3.5vw,36px);color:var(--espresso);margin:7px 0 6px}.achievement-intro p{font-size:12px;color:var(--muted);margin:0}.chart-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.chart-heading h3,.achievement-note-card h3{font-family:Georgia,serif;font-size:22px;font-weight:400;color:var(--espresso);margin:5px 0 0}.chart-range{font-size:10px;color:var(--muted)}.weight-chart-wrap{width:100%;overflow:hidden;margin-top:7px}.weight-chart-wrap svg{width:100%;height:auto;display:block;overflow:visible}.chart-foot{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;padding:0 7px}
 @media(max-width:760px){.achievement-main-card{padding:17px 14px}.achievement-big-number{font-size:46px}.goal-current-number{font-size:30px}.chart-heading h3{font-size:20px}.chart-range{font-size:9px}.main{padding-top:24px}.topbar{margin-bottom:28px}.page-heading{margin:0 0 22px}.page-heading h1{font-size:36px}.overview-content{grid-template-columns:1fr;gap:13px}.date-panel,.holiday-panel{min-height:0;padding:22px;border-radius:18px}.today-date{font-size:42px;margin:12px 0 4px}.holiday-count{font-size:38px}.holiday-panel{gap:14px}.holiday-symbol{width:38px;height:38px;flex-basis:38px}}
 @media(min-width:761px){.overview-content{grid-template-columns:minmax(280px,.9fr) minmax(360px,1.1fr)}}
+
+.crafting-content{display:grid;gap:18px;max-width:1050px}.crafting-intro h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(27px,3.5vw,36px);color:var(--espresso);margin:7px 0 6px}.crafting-intro p{font-size:12px;color:var(--muted);margin:0;line-height:1.6}.crafting-empty{display:flex;flex-direction:column;align-items:flex-start;padding:25px}.crafting-empty-icon{font-size:30px;width:54px;height:54px;border-radius:17px;background:#eee6dc;display:grid;place-items:center}.crafting-empty h3{font-family:Georgia,serif;font-size:23px;font-weight:400;color:var(--espresso);margin:15px 0 6px}.crafting-empty p{font-size:12px;line-height:1.7;color:var(--muted);max-width:620px;margin:0}.crafting-card-preview{background:var(--paper);border:1px solid rgba(214,194,170,.5);border-radius:19px;padding:21px;box-shadow:var(--shadow)}.pattern-flip-card{display:block;width:100%;max-width:430px;height:270px;margin:16px auto 2px;border:0;background:transparent;padding:0;perspective:1000px;text-align:left;cursor:pointer;color:var(--ink)}.pattern-card-inner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1)}.pattern-flip-card.is-flipped .pattern-card-inner{transform:rotateY(180deg)}.pattern-card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;border:1px solid var(--line);border-radius:19px;background:#f7f0e7;backface-visibility:hidden;-webkit-backface-visibility:hidden;text-align:center}.pattern-card-front{background:linear-gradient(145deg,#f5efe6,#e9dfd3)}.pattern-card-back{transform:rotateY(180deg);background:#f3eee6}.pattern-card-kicker{font-size:9px;letter-spacing:2px;color:var(--latte);font-weight:700}.pattern-card-art{font-size:55px;color:var(--sage);margin:17px 0 10px}.pattern-card-face strong{font-family:Georgia,serif;font-size:23px;font-weight:400;color:var(--espresso)}.pattern-card-meta{font-size:11px;color:var(--muted);margin-top:8px}.pattern-card-turn{font-size:10px;color:var(--mocha);margin-top:20px}.pattern-card-placeholder{font-size:12px;line-height:2;color:var(--muted);text-align:left;margin-top:13px}.pattern-flip-card:focus-visible{outline:3px solid var(--latte);outline-offset:5px;border-radius:20px}
+@media(max-width:760px){.nav{grid-template-columns:repeat(9,minmax(0,1fr))}.nav a{font-size:7px}.nav .ico{font-size:16px}.crafting-empty{padding:19px}.crafting-card-preview{padding:15px}.pattern-flip-card{height:260px}.pattern-card-face{padding:18px}}
 </style>
 </head>
 <body>
@@ -37,6 +40,7 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
     <a href="#habits"><span class="ico">↗</span>Habits & goals</a>
     <a href="#learning"><span class="ico">▤</span>Learning</a>
     <a href="#journal"><span class="ico">✎</span>Journal</a>
+    <a href="#crafting"><span class="ico">🧶</span>Crafting</a>
   </nav></div>
   
 </aside>
@@ -61,10 +65,42 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
       <div class="achievement-card-footer"><span>23 kg lost</span><span>9 kg remaining to your goal</span></div>
     </article>
   </section>
+  <section id="crafting-content" class="crafting-content" hidden>
+    <div class="crafting-intro">
+      <div class="eyebrow">Your creative corner</div>
+      <h2>Patterns, ideas & handmade things.</h2>
+      <p>Keep your own patterns and crafting instructions together, instead of scattered around the home.</p>
+    </div>
+    <div class="crafting-empty card">
+      <div class="crafting-empty-icon">🧶</div>
+      <h3>Your pattern library starts here</h3>
+      <p>When you're ready, we'll add your patterns as cards. Each card will show what the pattern makes and which craft it belongs to on the front, with the materials and step-by-step instructions on the back.</p>
+    </div>
+    <div class="crafting-card-preview">
+      <div class="section-head"><h2>How your pattern cards will work</h2><span class="chart-range">Tap the card to turn it over</span></div>
+      <button class="pattern-flip-card" id="pattern-preview" type="button" aria-label="Preview pattern card. Tap to see the back with instructions." aria-pressed="false">
+        <span class="pattern-card-inner">
+          <span class="pattern-card-face pattern-card-front">
+            <span class="pattern-card-kicker">YOUR PATTERN</span>
+            <span class="pattern-card-art">✿</span>
+            <strong>What will you make?</strong>
+            <span class="pattern-card-meta">Craft type · e.g. crochet, knitting, sewing</span>
+            <span class="pattern-card-turn">Tap to see the steps ↻</span>
+          </span>
+          <span class="pattern-card-face pattern-card-back">
+            <span class="pattern-card-kicker">HOW TO MAKE IT</span>
+            <strong>Materials & steps</strong>
+            <span class="pattern-card-placeholder">1. Materials you'll need<br>2. First step<br>3. Next steps<br>4. Finishing touches</span>
+            <span class="pattern-card-turn">Tap to return ↻</span>
+          </span>
+        </span>
+      </button>
+    </div>
+  </section>
 </main>
 </div>
 <script>
-const pageNames={overview:"Overview",achievements:"My achievements",wellbeing:"Wellbeing",nutrition:"Nutrition",finances:"Finances",habits:"Habits & goals",learning:"Learning",journal:"Journal"};
+const pageNames={overview:"Overview",achievements:"My achievements",wellbeing:"Wellbeing",nutrition:"Nutrition",finances:"Finances",habits:"Habits & goals",learning:"Learning",journal:"Journal",crafting:"Crafting"};
 const navLinks=[...document.querySelectorAll('.nav a')];
 function showPage(key){
   const safeKey=pageNames[key]?key:"overview";
@@ -72,6 +108,7 @@ function showPage(key){
   heading.hidden=false;
   heading.textContent=pageNames[safeKey];
   document.getElementById('achievements-content').hidden=safeKey!=="achievements";
+  document.getElementById('crafting-content').hidden=safeKey!=="crafting";
   navLinks.forEach(link=>{const active=link.getAttribute('href')==="#"+safeKey;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
 }
 navLinks.forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const key=link.getAttribute('href').slice(1);history.replaceState(null,"","#"+key);showPage(key)}));
@@ -104,6 +141,7 @@ function drawWeightChart(){
 }
 
 updateDate();showPage(location.hash.slice(1)||"overview");drawWeightChart();
+document.getElementById("pattern-preview").addEventListener("click",function(){const flipped=this.classList.toggle("is-flipped");this.setAttribute("aria-pressed",String(flipped));this.setAttribute("aria-label",flipped?"Pattern card back showing steps. Tap to return to the front.":"Preview pattern card. Tap to see the back with instructions.");});
 if ('serviceWorker' in navigator && location.protocol !== 'file:') { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }
 </script>
 </body>
