@@ -129,8 +129,7 @@ updateDate();showPage(location.hash.slice(1)||"overview");drawWeightChart();
 const patternStoreKey="my-life-patterns-v1";
 const starterPattern={id:"crochet-hat",name:"Crochet hat",type:"Crochet",materials:"Yarn: Action Velvet\nBrand: Alice & Mae\nAmount: approximately 150–200 g",instructions:"Starting circle\nMake 4 chains and connect them into a circle.\n\nRounds\n1st: 8 sc\n2nd: 1 sc, 1 increase\n3rd: 2 sc, 1 increase\n…\n10th: 9 sc, 1 increase\n\nDiameter after 10th round: approximately 16.2 cm.\n\n11th round onward: To be added — pattern still in progress.",photo:""};
 let patterns=[];
-try{const saved=JSON.parse(localStorage.getItem(patternStoreKey)||"null");patterns=Array.isArray(saved)?saved:[starterPattern]}catch(e){patterns=[starterPattern]}
-if(!patterns.some(p=>p.id==="crochet-hat"))patterns.unshift(starterPattern);
+try{const raw=localStorage.getItem(patternStoreKey);const saved=raw===null?null:JSON.parse(raw);patterns=Array.isArray(saved)?saved:[starterPattern]}catch(e){patterns=[starterPattern]}
 function persistPatterns(){try{localStorage.setItem(patternStoreKey,JSON.stringify(patterns));return true}catch(e){alert("There isn't enough browser storage for this pattern. Try using a smaller photo.");return false}}
 function escapeHTML(value){return String(value||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function renderPatterns(){
