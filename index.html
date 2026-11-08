@@ -69,8 +69,8 @@ const navLinks=[...document.querySelectorAll('.nav a')];
 function showPage(key){
   const safeKey=pageNames[key]?key:"overview";
   const heading=document.getElementById('page-title');
-  heading.hidden=safeKey==="overview";
-  if(safeKey!=="overview") heading.textContent=pageNames[safeKey];
+  heading.hidden=false;
+  heading.textContent=pageNames[safeKey];
   document.getElementById('achievements-content').hidden=safeKey!=="achievements";
   navLinks.forEach(link=>{const active=link.getAttribute('href')==="#"+safeKey;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
 }
@@ -94,7 +94,8 @@ function drawWeightChart(){
  const x=i=>L+(Date.parse(weightData[i][0])-first)/(last-first)*(W-L-R);
  const y=v=>T+(hi-v)/(hi-lo)*(H-T-B);
  let out='';
- [60,70,80,90].forEach(v=>{out+=`<line x1="${L}" y1="${y(v)}" x2="${W-R}" y2="${y(v)}" stroke="#eee6dc" stroke-width="1"/><text x="${L-10}" y="${y(v)+4}" text-anchor="end" fill="#9b8c80" font-size="11">${v}</text>`});\n out+=`<line x1="${L}" y1="${y(60)}" x2="${W-R}" y2="${y(60)}" stroke="#c58f7c" stroke-width="2" stroke-dasharray="6 5"/><text x="${W-R-2}" y="${y(60)-8}" text-anchor="end" fill="#a66f5e" font-size="11" font-weight="600">GOAL · 60 kg</text>`;
+ [60,70,80,90].forEach(v=>{out+=`<line x1="${L}" y1="${y(v)}" x2="${W-R}" y2="${y(v)}" stroke="#eee6dc" stroke-width="1"/><text x="${L-10}" y="${y(v)+4}" text-anchor="end" fill="#9b8c80" font-size="11">${v}</text>`});
+ out+=`<line x1="${L}" y1="${y(60)}" x2="${W-R}" y2="${y(60)}" stroke="#c58f7c" stroke-width="2" stroke-dasharray="6 5"/><text x="${W-R-2}" y="${y(60)-8}" text-anchor="end" fill="#a66f5e" font-size="11" font-weight="600">GOAL · 60 kg</text>`;
  const pts=weightData.map((d,i)=>x(i)+','+y(d[1])).join(' ');
  const area=`${L},${H-B} ${pts} ${W-R},${H-B}`;
  out+=`<polygon points="${area}" fill="#87917a" opacity=".10"/><polyline points="${pts}" fill="none" stroke="#87917a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
@@ -102,7 +103,8 @@ function drawWeightChart(){
  out+=`<text x="${x(0)+8}" y="${y(92)-12}" fill="#49352b" font-size="12" font-weight="600">92 kg</text><text x="${x(weightData.length-1)-8}" y="${y(69)-13}" text-anchor="end" fill="#49352b" font-size="12" font-weight="600">69 kg</text>`;
  svg.innerHTML=out;
 }
-\nupdateDate();showPage(location.hash.slice(1)||"overview");drawWeightChart();
+
+updateDate();showPage(location.hash.slice(1)||"overview");drawWeightChart();
 if ('serviceWorker' in navigator && location.protocol !== 'file:') { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }
 </script>
 </body>
