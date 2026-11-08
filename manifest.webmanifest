@@ -1,0 +1,19 @@
+{
+  "name": "My Life — Personal Dashboard",
+  "short_name": "My Life",
+  "description": "A calm personal space to notice, reflect and grow.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5efe6",
+  "theme_color": "#49352b",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
