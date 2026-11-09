@@ -33,6 +33,10 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
 
 .dates-holiday-list{display:grid;gap:14px}.dates-holiday-row{border:1px solid var(--line);border-radius:13px;padding:13px;background:#fffdfa}.dates-holiday-row-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px}.dates-holiday-row-top strong{font-size:12px;color:var(--espresso)}.dates-holiday-row-top span{font-size:10px;color:var(--muted);text-align:right}.dates-day-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(23px,1fr));gap:3px}.dates-day-chip{height:27px;border-radius:6px;background:#eee6dc;color:var(--muted);display:grid;place-items:center;font-size:9px}.dates-day-chip.weekend{background:#d6c2aa;color:var(--espresso)}.dates-day-chip.past{opacity:.55}.dates-day-chip.today{outline:2px solid var(--sage);outline-offset:1px}.dates-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:13px;font-size:10px;color:var(--muted)}.dates-legend span{display:flex;align-items:center;gap:5px}.dates-legend i{width:10px;height:10px;border-radius:3px;background:#eee6dc}.dates-legend i.weekend-key{background:#d6c2aa}.dates-content{display:grid;gap:18px;max-width:1050px}.dates-intro h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(27px,3.5vw,36px);color:var(--espresso);margin:7px 0 6px}.dates-intro p{font-size:12px;color:var(--muted);margin:0;line-height:1.65}.academic-year-card{background:linear-gradient(135deg,#eee6dc,#fffdf9);border:1px solid rgba(214,194,170,.6);border-radius:20px;padding:22px;box-shadow:var(--shadow)}.academic-year-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--latte);font-weight:700}.academic-year-name{font-family:Georgia,serif;font-size:32px;color:var(--espresso);margin:7px 0 4px}.academic-year-note{font-size:11px;color:var(--muted)}.date-stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.date-stat-card{background:var(--paper);border:1px solid rgba(214,194,170,.5);border-radius:17px;padding:18px;box-shadow:var(--shadow);min-height:125px}.date-stat-label{font-size:11px;color:var(--muted);line-height:1.4}.date-stat-value{font-family:Georgia,serif;font-size:34px;color:var(--espresso);margin:9px 0 3px}.date-stat-foot{font-size:10px;color:var(--latte)}.dates-upcoming-card{background:var(--paper);border:1px solid rgba(214,194,170,.5);border-radius:18px;padding:21px;box-shadow:var(--shadow)}.dates-upcoming-card h3{font-family:Georgia,serif;font-weight:400;font-size:22px;color:var(--espresso);margin:0 0 12px}.dates-empty{border:1px dashed var(--capp);border-radius:13px;padding:19px;color:var(--muted);font-size:12px;line-height:1.6;background:#fffdfa}
 @media(max-width:760px){.nav{grid-template-columns:repeat(10,minmax(0,1fr))}.nav a{font-size:6.5px}.nav .ico{font-size:15px}.date-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.date-stat-card{padding:15px;min-height:115px}.date-stat-value{font-size:30px}.academic-year-card,.dates-upcoming-card{padding:17px}}
+.overview-content{display:grid;gap:18px;max-width:1050px}.overview-welcome h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(30px,4vw,40px);color:var(--espresso);margin:6px 0}.overview-welcome p{font-size:12px;color:var(--muted);margin:0}.overview-module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.overview-module-card{display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-height:165px;padding:21px;text-decoration:none;background:var(--paper);border:1px solid rgba(214,194,170,.6);border-radius:19px;box-shadow:var(--shadow);transition:.2s}.overview-module-card:hover{transform:translateY(-3px);border-color:var(--latte)}.overview-module-icon{width:43px;height:43px;border-radius:14px;background:#eee6dc;display:grid;place-items:center;font-size:22px}.overview-module-card strong{font-family:Georgia,serif;font-size:19px;font-weight:400;color:var(--espresso)}.overview-module-card>span:last-child{font-size:11px;color:var(--muted)}.achievement-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}.achievement-tile{min-width:0;background:var(--paper);border:1px solid rgba(214,194,170,.55);border-radius:16px;padding:15px;box-shadow:var(--shadow)}.achievement-tile-icon{font-size:22px;margin-bottom:10px}.achievement-tile-label{font-size:11px;color:var(--muted)}.achievement-tile-value{font-family:Georgia,serif;font-size:31px;line-height:1.15;color:var(--espresso);margin:7px 0 5px}.achievement-tile-value small{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:11px;color:var(--latte)}.achievement-tile-foot,.achievement-tile-detail{font-size:10px;color:var(--muted);line-height:1.5}.achievement-tile-detail{margin-top:5px}.achievement-tile-progress{height:5px;background:#eee6dc;border-radius:8px;margin-top:11px;overflow:hidden}.achievement-tile-progress span{display:block;width:71.875%;height:100%;background:var(--sage);border-radius:8px}.achievement-chart-card{background:var(--paper);border:1px solid rgba(214,194,170,.5);border-radius:18px;padding:21px;box-shadow:var(--shadow)}.achievements-content{gap:15px}
+@media(min-width:1100px){.achievement-tiles{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(max-width:760px){.overview-module-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.overview-module-card{min-height:140px;padding:16px}.achievement-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.achievement-tile{padding:13px}.achievement-tile-value{font-size:28px}.achievement-chart-card{padding:15px}}
+@media(max-width:360px){.achievement-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.achievement-tile{padding:11px}}
 </style>
 </head>
 <body>
@@ -63,43 +67,40 @@ html{scroll-behavior:smooth;scroll-padding-top:18px}a,button{-webkit-tap-highlig
     <div class="top-actions"><div class="avatar">A</div></div>
   </header>
   <h1 class="page-title" id="page-title" hidden></h1>
-  <section id="achievements-content" class="achievements-content" hidden>
-    <div class="achievement-intro"><div class="eyebrow">A journey worth celebrating</div><h2>Look how far you've come.</h2><p>Your weight journey — from 92 kg to your goal of 60 kg.</p></div>
-    <article class="achievement-main-card">
-      <div class="achievement-overview"><div><div class="eyebrow">Weight lost so far</div><div class="achievement-big-number">23 <small>kg</small></div><div class="achievement-muted">92 kg → 69 kg · 25% of starting weight</div></div><div class="goal-current"><div class="eyebrow">Current weight</div><div class="goal-current-number">69 <small>kg</small></div></div></div>
-      <div class="goal-progress-block"><div class="goal-progress-label"><span>Progress towards 60 kg</span><strong>72%</strong></div><div class="goal-progress-track mini-goal-track" aria-label="Four complete five-kilogram milestones and 60 percent of the fifth completed"><span class="mini-goal-fill"></span></div><div class="mini-goal-labels"><span>0</span><span>Each segment = 5 kg</span><span>32 kg total</span></div><div class="goal-progress-foot"><span>9 kg to go</span><span>Goal: 60 kg</span></div></div>
-      <div class="chart-heading"><div><div class="eyebrow">Since June 2025</div><h3>Your weight journey</h3></div><div class="chart-range">Jul 2025 — Nov 2026</div></div>
+    <section id="overview-content" class="overview-content" hidden>
+    <div class="overview-welcome"><div class="eyebrow">Your personal space</div><h2>My Life</h2><p>Choose a space to open.</p></div>
+    <div class="overview-module-grid">
+      <a class="overview-module-card" href="#achievements"><span class="overview-module-icon">🏆</span><strong>My achievements</strong><span>Milestones and progress</span></a>
+      <a class="overview-module-card" href="#crafting"><span class="overview-module-icon">🧶</span><strong>Crafting</strong><span>Patterns and projects</span></a>
+      <a class="overview-module-card" href="#dates"><span class="overview-module-icon">📅</span><strong>Dates</strong><span>Academic holidays and weekends</span></a>
+    </div>
+  </section>
+<section id="achievements-content" class="achievements-content" hidden>
+    <div class="achievement-intro"><div class="eyebrow">A journey worth celebrating</div><h2>Look how far you've come.</h2><p>Your milestones, one little card at a time.</p></div>
+    <div class="achievement-tiles">
+      <article class="achievement-tile">
+        <div class="achievement-tile-icon">⚖️</div><div class="achievement-tile-label">Weight journey</div>
+        <div class="achievement-tile-value">23 <small>kg lost</small></div>
+        <div class="achievement-tile-foot">69 kg now · Goal 60 kg</div>
+        <div class="achievement-tile-progress"><span></span></div>
+      </article>
+      <article class="achievement-tile">
+        <div class="achievement-tile-icon">🚭</div><div class="achievement-tile-label">Smoke-free</div>
+        <div class="achievement-tile-value"><span id="smoke-years">1</span><small> years</small></div>
+        <div class="achievement-tile-foot">Since 15 February 2025</div>
+        <div class="achievement-tile-detail"><span id="smoke-months">8</span> months · <span id="smoke-weeks">3</span> weeks <span id="smoke-days">3</span> days</div>
+      </article>
+      <article class="achievement-tile">
+        <div class="achievement-tile-icon">🌱</div><div class="achievement-tile-label">Sober</div>
+        <div class="achievement-tile-value"><span id="sober-years">7</span><small> years</small></div>
+        <div class="achievement-tile-foot">Since 11 November 2019</div>
+        <div class="achievement-tile-detail"><span id="sober-months">0</span> months · <span id="sober-weeks">0</span> weeks <span id="sober-days">0</span> days</div>
+      </article>
+    </div>
+    <article class="achievement-chart-card">
+      <div class="chart-heading"><div><div class="eyebrow">Your progress over time</div><h3>Weight journey</h3></div><div class="chart-range">Jul 2025 — Nov 2026</div></div>
       <div class="weight-chart-wrap"><svg id="weight-chart" viewBox="0 0 760 300" role="img" aria-label="Weight history from 92 kilograms to 69 kilograms, with a goal line at 60 kilograms"></svg></div>
       <div class="chart-foot"><span>July 2025 · 92 kg</span><span>November 2026 · 69 kg</span></div>
-      <div class="achievement-card-footer"><span>23 kg lost</span><span>9 kg remaining to your goal</span></div>
-    </article>
-    <article class="smoking-achievement-card">
-      <div class="smoking-achievement-icon" aria-hidden="true">🚭</div>
-      <div class="smoking-achievement-copy">
-        <div class="eyebrow">A life-changing achievement</div>
-        <h3>Quit smoking</h3>
-        <p>Smoke-free since 15 February 2025</p>
-        <div class="smoking-counter" id="smoking-counter" aria-live="off">
-          <div><strong id="smoke-years">1</strong><span>year</span></div>
-          <div><strong id="smoke-months">8</strong><span>months</span></div>
-          <div><strong id="smoke-weeks">3</strong><span>weeks</span></div>
-          <div><strong id="smoke-days">3</strong><span>days</span></div>
-        </div>
-      </div>
-    </article>
-    <article class="smoking-achievement-card">
-      <div class="smoking-achievement-icon" aria-hidden="true">🌱</div>
-      <div class="smoking-achievement-copy">
-        <div class="eyebrow">A life-changing achievement</div>
-        <h3>Sober</h3>
-        <p>Sober since 11 November 2019</p>
-        <div class="smoking-counter" aria-live="off">
-          <div><strong id="sober-years">7</strong><span>years</span></div>
-          <div><strong id="sober-months">0</strong><span>months</span></div>
-          <div><strong id="sober-weeks">0</strong><span>weeks</span></div>
-          <div><strong id="sober-days">0</strong><span>days</span></div>
-        </div>
-      </div>
     </article>
   </section>
   <section id="crafting-content" class="crafting-content" hidden>
@@ -149,12 +150,14 @@ function showPage(key){
   const heading=document.getElementById('page-title');
   heading.hidden=false;
   heading.textContent=pageNames[safeKey];
+  document.getElementById('overview-content').hidden=safeKey!=="overview";
   document.getElementById('achievements-content').hidden=safeKey!=="achievements";
   document.getElementById('crafting-content').hidden=safeKey!=="crafting";
   document.getElementById('dates-content').hidden=safeKey!=="dates";
   navLinks.forEach(link=>{const active=link.getAttribute('href')==="#"+safeKey;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
 }
 navLinks.forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const key=link.getAttribute('href').slice(1);history.replaceState(null,"","#"+key);showPage(key)}));
+document.querySelectorAll(".overview-module-card").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();const key=link.getAttribute("href").slice(1);history.replaceState(null,"","#"+key);showPage(key)}));
 function isoWeek(date){const d=new Date(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate()));const day=d.getUTCDay()||7;d.setUTCDate(d.getUTCDate()+4-day);const yearStart=new Date(Date.UTC(d.getUTCFullYear(),0,1));return Math.ceil((((d-yearStart)/86400000)+1)/7)}
 
 function updateSmokingAchievement(){
