@@ -1,4 +1,4 @@
-const CACHE = "my-life-shell-v25";
+const CACHE = "my-life-shell-v26";
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
